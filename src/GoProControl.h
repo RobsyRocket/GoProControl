@@ -111,7 +111,7 @@ class GoProControl
 
     // Debug
     void enableDebug(UniversalSerial *debug_port, const uint32_t debug_baudrate = 115200);
-    void disableDebug();
+    void disableDebug(bool endSerial = true);
     void printStatus();
 
   private:

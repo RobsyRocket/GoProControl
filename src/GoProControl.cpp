@@ -1383,9 +1383,11 @@ void GoProControl::enableDebug(UniversalSerial *debug_port, const uint32_t debug
     _debug_port->begin(debug_baudrate);
 }
 
-void GoProControl::disableDebug()
+void GoProControl::disableDebug(bool endSerial)
 {
-    _debug_port->end();
+    if ( endSerial ) {
+        _debug_port->end();
+    }
     _debug = false;
 }
 
